@@ -22,7 +22,7 @@
 
             <label>High Priority <input type="checkbox" v-model="newItemHighPriority" /></label>
 
-            <button @click="saveItem" class="btn btn-primry">Save
+            <button :disabled="newItem.length < 5" @click="saveItem" class="btn btn-primry">Save
                 Item</button>
 
         </div>
