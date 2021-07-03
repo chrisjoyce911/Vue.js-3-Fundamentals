@@ -14,6 +14,11 @@
 <body>
     <div id="shopping-list">
         <h1>{{header || 'Welcome'}}</h1>
+        <input type="text" v-model="newItem" placeholder="Add an Item">
+
+        <label>High Priority <input type="checkbox" v-model="newItemHighPriority"></label>
+        <br>
+
         <ul>
             <li v-for="item in items" :key="items.id">{{item.label}}</li>
         </ul>
@@ -26,17 +31,17 @@
         const ShoppingList = Vue.createApp({
             data() {
                 return {
-                    header: "Shopping Lis App",
+                    header: "Shopping List App",
+                    newItem: '',
+                    newItemHighPriority: false,
                     items: [
                         { id: 1, label: '10 Party hats' },
                         { id: 2, label: '2 board games' },
                         { id: 3, label: '20 cups' },
-
                     ]
                 }
             }
-        })
-            .mount('#shopping-list')
+        }).mount('#shopping-list')
     </script>
 </body>
 
